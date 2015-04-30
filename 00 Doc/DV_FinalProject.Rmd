@@ -21,11 +21,28 @@ library("grid")
 ```
 
 DESCRIPTION OF DATA AND PROJECT:
+R studio:
+GGplots
+data wrangling
+joins
+beautiful plotting
+cross tabs 
+
+Tableau:
+Map
+Advanced Table Calcs 
+Data Blending 
+Filtering 
+
+Data
+```{r, eval = TRUE, echo=TRUE}
+source("../01 Data/Data.R")
+```
 
 DATA WRANGLING 1
 ```{r, eval = TRUE, echo=TRUE}
-
-
+data.frame(head(dfTOPCOMPANIES))
+data.frame(head(dfSTATETOTALS))
 ```
 
 

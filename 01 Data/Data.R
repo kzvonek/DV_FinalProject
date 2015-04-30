@@ -1,1 +1,2 @@
-Data 
+dfTOPCOMPANIES <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select STATE from TOPCOMPANIES"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_nh5797', PASS='orcl_nh5797', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
+dfSTATETOTALS <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select STATE from STATETOTALS"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_nh5797', PASS='orcl_nh5797', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
