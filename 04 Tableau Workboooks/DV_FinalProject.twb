@@ -1,0 +1,566 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='mac' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8300.15.0219.2230                                -->
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource caption='TOPCOMPANIES (C##CS329E_NH5797)' inline='true' name='oracle.42123.838290960700' version='8.3'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='C##CS329E_NH5797' server='129.152.144.84' service='ORCL.usuniversi01134.oraclecloud.internal' username='C##cs329e_nh5797'>
+        <relation name='TOPCOMPANIES' table='[C##CS329E_NH5797].[TOPCOMPANIES]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>COMPANYID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[COMPANYID]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>COMPANYID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CITY]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>CITY</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATE]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>STATE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INDUSTRY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INDUSTRY]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>INDUSTRY</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>REVENUE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[REVENUE]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>REVENUE</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>2</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GROWTH</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[GROWTH]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>GROWTH</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>3</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PERCENTAGEGROWTH</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[PERCENTAGEGROWTH]</local-name>
+            <parent-name>[TOPCOMPANIES]</parent-name>
+            <remote-alias>PERCENTAGEGROWTH</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>3</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal'>
+      </column>
+      <column caption='Companyid' datatype='real' name='[COMPANYID]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Growth' datatype='real' name='[GROWTH]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Percentagegrowth' datatype='real' name='[PERCENTAGEGROWTH]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Revenue' datatype='real' name='[REVENUE]' role='measure' type='quantitative'>
+      </column>
+      <column caption='State' datatype='string' name='[STATE]' role='dimension' type='nominal'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='STATEHOUSING+ (C##CS329E_NH5797)' inline='true' name='oracle.42123.836126273100' version='8.3'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='C##CS329E_NH5797' server='129.152.144.84' service='ORCL.usuniversi01134.oraclecloud.internal' username='C##cs329e_nh5797'>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[STATEHOUSING].[STATE]'>
+              </expression>
+              <expression op='[STATETOTALS].[STATE]'>
+              </expression>
+            </expression>
+          </clause>
+          <relation name='STATEHOUSING' table='[C##CS329E_NH5797].[STATEHOUSING]' type='table' />
+          <relation name='STATETOTALS' table='[C##CS329E_NH5797].[STATETOTALS]' type='table' />
+        </relation>
+        <cols>
+          <map key='[AREA_DESCRIPTION]' value='[STATETOTALS].[AREA_DESCRIPTION]' />
+          <map key='[EMPLOYMENT]' value='[STATETOTALS].[EMPLOYMENT]' />
+          <map key='[FIPS_CODE]' value='[STATETOTALS].[FIPS_CODE]' />
+          <map key='[HOUSINGDENSITY]' value='[STATEHOUSING].[HOUSINGDENSITY]' />
+          <map key='[HOUSING]' value='[STATEHOUSING].[HOUSING]' />
+          <map key='[LANDAREA]' value='[STATEHOUSING].[LANDAREA]' />
+          <map key='[NUM_ESTABLISHMENTS]' value='[STATETOTALS].[NUM_ESTABLISHMENTS]' />
+          <map key='[NUM_FIRMS]' value='[STATETOTALS].[NUM_FIRMS]' />
+          <map key='[PAYROLL]' value='[STATETOTALS].[PAYROLL]' />
+          <map key='[POPULATIONDENSITY]' value='[STATEHOUSING].[POPULATIONDENSITY]' />
+          <map key='[POPULATION]' value='[STATEHOUSING].[POPULATION]' />
+          <map key='[STATE (STATETOTALS)]' value='[STATETOTALS].[STATE]' />
+          <map key='[STATE]' value='[STATEHOUSING].[STATE]' />
+          <map key='[TOTALAREA]' value='[STATEHOUSING].[TOTALAREA]' />
+          <map key='[WATERAREA]' value='[STATEHOUSING].[WATERAREA]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>STATE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATE]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>STATE</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>POPULATION</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[POPULATION]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>POPULATION</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HOUSING</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[HOUSING]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>HOUSING</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTALAREA</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTALAREA]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>TOTALAREA</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WATERAREA</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[WATERAREA]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>WATERAREA</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LANDAREA</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LANDAREA]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>LANDAREA</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>POPULATIONDENSITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[POPULATIONDENSITY]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>POPULATIONDENSITY</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HOUSINGDENSITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[HOUSINGDENSITY]</local-name>
+            <parent-name>[STATEHOUSING]</parent-name>
+            <remote-alias>HOUSINGDENSITY</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FIPS_CODE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[FIPS_CODE]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>FIPS_CODE</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATE (STATETOTALS)]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>STATE</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AREA_DESCRIPTION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AREA_DESCRIPTION]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>AREA_DESCRIPTION</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=873,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NUM_FIRMS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[NUM_FIRMS]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>NUM_FIRMS</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NUM_ESTABLISHMENTS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[NUM_ESTABLISHMENTS]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>NUM_ESTABLISHMENTS</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMPLOYMENT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[EMPLOYMENT]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>EMPLOYMENT</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PAYROLL</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[PAYROLL]</local-name>
+            <parent-name>[STATETOTALS]</parent-name>
+            <remote-alias>PAYROLL</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Area Description' datatype='string' name='[AREA_DESCRIPTION]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Employment' datatype='real' name='[EMPLOYMENT]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Fips Code' datatype='string' name='[FIPS_CODE]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Housingdensity' datatype='real' name='[HOUSINGDENSITY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Housing' datatype='real' name='[HOUSING]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Landarea' datatype='real' name='[LANDAREA]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Num Establishments' datatype='real' name='[NUM_ESTABLISHMENTS]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Num Firms' datatype='real' name='[NUM_FIRMS]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Payroll' datatype='real' name='[PAYROLL]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Populationdensity' datatype='real' name='[POPULATIONDENSITY]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Population' datatype='real' name='[POPULATION]' role='measure' type='quantitative'>
+      </column>
+      <column caption='State (Statetotals)' datatype='string' name='[STATE (STATETOTALS)]' role='dimension' type='nominal'>
+      </column>
+      <column caption='State' datatype='string' name='[STATE]' role='dimension' type='nominal'>
+      </column>
+      <column caption='Totalarea' datatype='real' name='[TOTALAREA]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Waterarea' datatype='real' name='[WATERAREA]' role='measure' type='quantitative'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='144' name='Sheet 1' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+    <thumbnail height='144' name='Sheet 2' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAABmUlEQVR4nO3SQQ0AIBDAMMC/58MDH7KkVbDH9szMgpjzOwBeGJck45JkXJKMS5JxSTIu
+      ScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45Jk
+      XJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYl
+      ybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKM
+      S5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgk
+      GZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5Jx
+      STIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuScYlybgkGZck
+      45JkXJKMS5JxSTIuScYlybgkGZck45JkXJKMS5JxSTIuSRePYgUc7kJNEQAAAABJRU5ErkJg
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
