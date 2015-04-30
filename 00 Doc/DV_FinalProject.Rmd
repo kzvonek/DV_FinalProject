@@ -43,6 +43,7 @@ DATA WRANGLING 1
 ```{r, eval = TRUE, echo=TRUE}
 data.frame(head(dfTOPCOMPANIES))
 data.frame(head(dfSTATETOTALS))
+data.frame(head(dfSTATEHOUSING))
 ```
 
 

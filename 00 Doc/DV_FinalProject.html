@@ -98,21 +98,36 @@ library(&quot;dplyr&quot;)</code></pre>
 <pre class="r"><code>source(&quot;../01 Data/Data.R&quot;)</code></pre>
 <p>DATA WRANGLING 1</p>
 <pre class="r"><code>data.frame(head(dfTOPCOMPANIES))</code></pre>
-<pre><code>##   STATE
-## 1    NJ
-## 2    PA
-## 3    AZ
-## 4    VA
-## 5    MA
-## 6    UT</code></pre>
+<pre><code>##   COMPANYID STATE                   INDUSTRY   REVENUE GROWTH
+## 1       173    NJ                     Health   5400000 11.100
+## 2       174    PA                     Health   9500000 11.098
+## 3       175    AZ Logistics &amp; Transportation  25400000 11.048
+## 4       176    VA        Government Services  39000000 11.029
+## 5       177    MA                  Insurance 207700000 10.999
+## 6       178    UT                   Software  15500000 10.971</code></pre>
 <pre class="r"><code>data.frame(head(dfSTATETOTALS))</code></pre>
-<pre><code>##   STATE
-## 1    AL
-## 2    AK
-## 3    AZ
-## 4    AR
-## 5    CA
-## 6    CO</code></pre>
+<pre><code>##   STATE NUM_FIRMS NUM_ESTABLISHMENTS EMPLOYMENT   PAYROLL
+## 1    AL     73661              97938    1585761  61284931
+## 2    AK     16656              20427     258219  13986403
+## 3    AZ    101205             131375    2134252  90838616
+## 4    AR     50412              64815     978519  35633588
+## 5    CA    701899             864913   12952818 700102379
+## 6    CO    126478             153112    2035803  97691175</code></pre>
+<pre class="r"><code>data.frame(head(dfSTATEHOUSING))</code></pre>
+<pre><code>##   STATE POPULATION  HOUSING TOTALAREA WATERAREA  LANDAREA
+## 1    AL    4779736  2171853  52420.07   1774.74  50645.33
+## 2    AK     710231   306967 665384.06  94743.10 570640.94
+## 3    AZ    6392017  2844526 113990.30    396.22 113594.08
+## 4    AR    2915918  1316299  53178.55   1143.07  52035.48
+## 5    CA   37253956 13680081 163694.73   7915.52 155779.22
+## 6    CO    5029196  2212898 104093.67    451.78 103641.89
+##   POPULATIONDENSITY HOUSINGDENSITY
+## 1              94.4           42.9
+## 2               1.2            0.5
+## 3              56.3           25.0
+## 4              56.0           25.3
+## 5             239.1           87.8
+## 6              48.5           21.4</code></pre>
 <p>DATA WRANGLING 2</p>
 <p>DATA WRANGLING 3</p>
 <p>R DATASET AND TABLEAU WORKBOOK1</p>
