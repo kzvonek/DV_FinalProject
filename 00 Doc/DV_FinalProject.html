@@ -61,8 +61,14 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <p>Created by: Natasha Halfin, Evan Johnston, and Kaylyn Zvonek</p>
 <pre class="r"><code>library(&quot;ggplot2&quot;)
-library(&quot;gplots&quot;)
-library(&quot;bitops&quot;)
+library(&quot;gplots&quot;)</code></pre>
+<pre><code>## 
+## Attaching package: 'gplots'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     lowess</code></pre>
+<pre class="r"><code>library(&quot;bitops&quot;)
 library(&quot;knitr&quot;)
 library(&quot;jsonlite&quot;)</code></pre>
 <pre><code>## 
@@ -79,11 +85,6 @@ library(&quot;dplyr&quot;)</code></pre>
 <pre><code>## 
 ## Attaching package: 'dplyr'
 ## 
-## The following objects are masked from 'package:plyr':
-## 
-##     arrange, count, desc, failwith, id, mutate, rename, summarise,
-##     summarize
-## 
 ## The following object is masked from 'package:stats':
 ## 
 ##     filter
@@ -91,12 +92,14 @@ library(&quot;dplyr&quot;)</code></pre>
 ## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(&quot;grid&quot;)</code></pre>
-<p>DESCRIPTION OF DATA AND PROJECT: R studio: GGplots data wrangling joins beautiful plotting cross tabs</p>
-<p>Tableau: Map Advanced Table Calcs Data Blending Filtering</p>
-<p>Data</p>
-<pre class="r"><code>source(&quot;../01 Data/Data.R&quot;)</code></pre>
-<p>DATA WRANGLING 1</p>
+<pre class="r"><code>library(&quot;grid&quot;)
+
+source(&quot;../01 Data/Data.R&quot;)
+source(&quot;../02 Data Wrangling/DataWrangling.R&quot;)
+#source(&quot;../03 Visualizations/Visualizations.R&quot;)</code></pre>
+<p>For our project, we chose to work with three datasets. One contains data on the top 5000 companies in the U.S., the second contains state employment data, and the third data set describes housing data by state. Our goal was to cover as much material as possible that reflected the material covered in class, including data blending, data joins, beautiful plotting, data wrangling, SQL crosstabs, and advanced table calculations.</p>
+<p>Below is a snapshot of the dataframes for each dataset prior to any data manipulation.</p>
+<p>Top Companies Data</p>
 <pre class="r"><code>data.frame(head(dfTOPCOMPANIES))</code></pre>
 <pre><code>##   COMPANYID STATE                   INDUSTRY   REVENUE GROWTH
 ## 1       173    NJ                     Health   5400000 11.100
@@ -105,6 +108,7 @@ library(&quot;dplyr&quot;)</code></pre>
 ## 4       176    VA        Government Services  39000000 11.029
 ## 5       177    MA                  Insurance 207700000 10.999
 ## 6       178    UT                   Software  15500000 10.971</code></pre>
+<p>State Employment Data</p>
 <pre class="r"><code>data.frame(head(dfSTATETOTALS))</code></pre>
 <pre><code>##   STATE NUM_FIRMS NUM_ESTABLISHMENTS EMPLOYMENT   PAYROLL
 ## 1    AL     73661              97938    1585761  61284931
@@ -113,6 +117,7 @@ library(&quot;dplyr&quot;)</code></pre>
 ## 4    AR     50412              64815     978519  35633588
 ## 5    CA    701899             864913   12952818 700102379
 ## 6    CO    126478             153112    2035803  97691175</code></pre>
+<p>State Housing Data</p>
 <pre class="r"><code>data.frame(head(dfSTATEHOUSING))</code></pre>
 <pre><code>##   STATE POPULATION  HOUSING TOTALAREA WATERAREA  LANDAREA
 ## 1    AL    4779736  2171853  52420.07   1774.74  50645.33
@@ -128,11 +133,87 @@ library(&quot;dplyr&quot;)</code></pre>
 ## 4              56.0           25.3
 ## 5             239.1           87.8
 ## 6              48.5           21.4</code></pre>
-<p>DATA WRANGLING 2</p>
+<p>DATA WRANGLINGS</p>
+<pre class="r"><code>data.frame(head(dfSTATEHOUSINGTOTALS))</code></pre>
+<pre><code>##   STATE NUM_FIRMS NUM_ESTABLISHMENTS EMPLOYMENT   PAYROLL POPULATION
+## 1    AL     73661              97938    1585761  61284931    4779736
+## 2    AK     16656              20427     258219  13986403     710231
+## 3    AZ    101205             131375    2134252  90838616    6392017
+## 4    AR     50412              64815     978519  35633588    2915918
+## 5    CA    701899             864913   12952818 700102379   37253956
+## 6    CO    126478             153112    2035803  97691175    5029196
+##    HOUSING TOTALAREA WATERAREA  LANDAREA POPULATIONDENSITY HOUSINGDENSITY
+## 1  2171853  52420.07   1774.74  50645.33              94.4           42.9
+## 2   306967 665384.06  94743.10 570640.94               1.2            0.5
+## 3  2844526 113990.30    396.22 113594.08              56.3           25.0
+## 4  1316299  53178.55   1143.07  52035.48              56.0           25.3
+## 5 13680081 163694.73   7915.52 155779.22             239.1           87.8
+## 6  2212898 104093.67    451.78 103641.89              48.5           21.4
+##    EMP_RATE  WATER_PERC LAND_PERC  AVG_EMP  AVG_PAY
+## 1 0.3317675 0.033856116 0.9661438 16.19148 12.82182
+## 2 0.3635704 0.142388595 0.8576114 12.64106 19.69275
+## 3 0.3338934 0.003475910 0.9965241 16.24550 14.21126
+## 4 0.3355784 0.021494944 0.9785050 15.09711 12.22037
+## 5 0.3476897 0.048355373 0.9516447 14.97586 18.79270
+## 6 0.4047969 0.004340129 0.9956599 13.29617 19.42481</code></pre>
 <p>DATA WRANGLING 3</p>
-<p>R DATASET AND TABLEAU WORKBOOK1</p>
+<pre class="r"><code>data.frame(head(dfTopCompanies2))</code></pre>
+<pre><code>##                  INDUSTRY STATE AVG_REVENUE AVG_GROWTH
+## 1 Advertising &amp; Marketing    AL     3200000   0.422000
+## 2 Advertising &amp; Marketing    AR    16050000   2.785000
+## 3 Advertising &amp; Marketing    AZ    19558333   1.564167
+## 4 Advertising &amp; Marketing    CA  4119204933   3.886627
+## 5 Advertising &amp; Marketing    CO    13337500   2.338625
+## 6 Advertising &amp; Marketing    CT     9550000   3.001833</code></pre>
+<pre class="r"><code>data.frame(head(dfTopCompanies3))</code></pre>
+<pre><code>##                       INDUSTRY STATE AVG_REVENUE AVG_GROWTH
+## 1      Advertising &amp; Marketing    TX    17688462   6.641577
+## 2 Business Products &amp; Services    TX    27817143   2.497714
+## 3            Computer Hardware    TX    19800000   1.294750
+## 4                 Construction    TX    38806452   2.373097
+## 5 Consumer Products &amp; Services    TX    24133333   1.518867
+## 6                    Education    TX    31700000   1.148200</code></pre>
 <p>R DATASET AND TABLEAU WORKBOOK2</p>
+<pre class="r"><code>data.frame(head(dfNormalized))</code></pre>
+<pre><code>##   VarianceAVG_EMP VarianceAVG_PAY VarianceGro_Avg
+## 1     1.097875013       -3.650363      -0.6828168
+## 2    -2.452539970        3.220565      -0.1956659
+## 3     1.151892449       -2.260927      -0.6537214
+## 4     0.003503882       -4.251820      -1.2498477
+## 5    -0.117740957        2.320512       1.1567867
+## 6    -1.797434451        2.952623       0.3823477</code></pre>
 <p>R DATASET AND TABLEAU WORKBOOK3</p>
+<pre class="r"><code>data.frame(head(dfSTATEHOUSINGTOTALS3))</code></pre>
+<pre><code>##   STATE NUM_FIRMS NUM_ESTABLISHMENTS EMPLOYMENT POPULATION
+## 1    AL     73661              97938    1585761    4779736
+## 2    AK     16656              20427     258219     710231
+## 3    AZ    101205             131375    2134252    6392017
+## 4    AR     50412              64815     978519    2915918
+## 5    CA    701899             864913   12952818   37253956
+## 6    CO    126478             153112    2035803    5029196
+##   POPULATIONDENSITY EMPLOYMENT_RATE
+## 1              94.4       0.3317675
+## 2               1.2       0.3635704
+## 3              56.3       0.3338934
+## 4              56.0       0.3355784
+## 5             239.1       0.3476897
+## 6              48.5       0.4047969</code></pre>
+<pre class="r"><code>data.frame(head(dfRANKREVENUE))</code></pre>
+<pre><code>##   COMPANYID                INDUSTRY     REVENUE INDUSTRY_RANK
+## 1      4664 Advertising &amp; Marketing 3.40549e+11             1
+## 2      3033 Advertising &amp; Marketing 3.66100e+08             2
+## 3      2754 Advertising &amp; Marketing 2.32600e+08             3
+## 4      1871 Advertising &amp; Marketing 2.08900e+08             4
+## 5      1430 Advertising &amp; Marketing 2.00900e+08             5
+## 6      2010 Advertising &amp; Marketing 1.51400e+08             6</code></pre>
+<pre class="r"><code>data.frame(head(dfRANKPOPDENSITY))</code></pre>
+<pre><code>##   STATE POPULATION HOUSING POPULATIONDENSITY POPDENSITY_RANK
+## 1    DC     601723  296719            9856.5               1
+## 2    NJ    8791894 3553562            1195.5               2
+## 3    RI    1052567  463388            1018.1               3
+## 4    MA    6547629 2808254             839.4               4
+## 5    CT    3574097 1487891             738.1               5
+## 6    MD    5773552 2378814             594.8               6</code></pre>
 
 
 </div>
