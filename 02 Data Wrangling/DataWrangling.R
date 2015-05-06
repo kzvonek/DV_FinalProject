@@ -13,4 +13,11 @@ dfSTATEHOUSINGTOTALS1<-transform(dfSTATEHOUSINGTOTALS1, EMPLOYMENT = as.numeric(
 dfSTATEHOUSINGTOTALS2 <- dfSTATEHOUSINGTOTALS1%>%select(STATE, NUM_FIRMS, NUM_ESTABLISHMENTS, EMPLOYMENT, POPULATION, POPULATIONDENSITY)%>%filter("NUM_FIRMS">100000)
 dfSTATEHOUSINGTOTALS3<-dfSTATEHOUSINGTOTALS1%>%select(STATE,NUM_FIRMS, NUM_ESTABLISHMENTS,EMPLOYMENT, POPULATION, POPULATIONDENSITY)%>%mutate(EMPLOYMENT_RATE=EMPLOYMENT/POPULATION)
 
+dfTopCompanies2<-dfTOPCOMPANIES%>%group_by(INDUSTRY, STATE)%>%summarise(AVG_REVENUE = mean(REVENUE),AVG_GROWTH = mean(GROWTH))
+dfTopCompanies3<-dfTopCompanies2%>%filter(STATE=="TX")
+
+#sql crosstab
+dfRANKREVENUE <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="SELECT COMPANYID, INDUSTRY, REVENUE, rank() OVER (PARTITION BY INDUSTRY order by REVENUE desc) as INDUSTRY_RANK FROM TOPCOMPANIES order by 2,3 desc"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_nh5797', PASS='orcl_nh5797', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
+dfRANKPOPDENSITY <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="SELECT STATE, POPULATION, HOUSING,POPULATIONDENSITY, rank() OVER ( order by POPULATIONDENSITY desc) as POPDENSITY_RANK from STATEHOUSING"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521:ORCL', USER='C##cs329e_nh5797', PASS='orcl_nh5797', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
+
   
