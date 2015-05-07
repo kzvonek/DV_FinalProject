@@ -82,3 +82,13 @@ data.frame(head(dfRANKREVENUE))
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfRANKPOPDENSITY))
 ```
+
+![](./EmploymentPayState.png) 
+
+![](./CityGrowthNth.png) 
+
+![](./LandWaterHousing.png) 
+
+![](./IndustryStateEarnings.png) 
+
+![](./PopulationvsArea.jpg) 
