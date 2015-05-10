@@ -25,7 +25,7 @@ source("../02 Data Wrangling/DataWrangling.R")
 ```
 
 
-For our project, we chose to work with three datasets. One contains data on the top 5000 companies in the U.S., the second contains state employment data, and the third data set describes housing data by state. Our goal was to cover as much material as possible that reflected the material covered in class, including data blending, data joins, beautiful plotting, data wrangling, SQL crosstabs, and advanced table calculations.
+For our project, we chose to work with three datasets. One contains data on the top 5000 companies in the U.S., the second contains state employment data, and the third data set describes housing data by state. Our goal was to cover as much material as possible covered in class, including data blending, data joins, beautiful plotting, data wrangling, SQL crosstabs, and advanced table calculations.
 
 Below is a snapshot of the dataframes for each dataset prior to any data manipulation.
 
@@ -46,43 +46,46 @@ data.frame(head(dfSTATEHOUSING))
 ```
 
 
-DATA WRANGLINGS
+## Data Wranglings
 
+The dataframe below displays a left join between the state employment data and the state housing data based on the key of state. There have also been mutated columns added that represent calculated values based on existing columns, such as Average Employment (AVG_EMP).
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfSTATEHOUSINGTOTALS))
 ```
-
-DATA WRANGLING 3 
+**************
+This dataframe displays the Top Companies Data grouped by Industry and State, with summarized values indicating average revenue and growth.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTopCompanies2))
 ```
+**************
 
-
-
+This dataframe the same combination of Top Companies data as the one above,except it is filtered to only show results for Texas companies and industries.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTopCompanies3))
 ```
+**************
 
-
-R DATASET AND TABLEAU WORKBOOK2
+This dataframe is a left join between a dataframe of the Top Companies data, grouped by state, with dfSTATEHOUSINGTOTALS from above. This displays a wide range of industry, employment, and housing data for each state.
 ```{r, eval=TRUE, echo=TRUE}
-data.frame(head(dfNormalized))
+data.frame(head(dfTOTALS))
 
 ```
 
-R DATASET AND TABLEAU WORKBOOK3
-```{r, eval=TRUE, echo=TRUE}
-data.frame(head(dfSTATEHOUSINGTOTALS3))
-```
-
+****************
+The dataframe below utilizes SQL crosstabs by ranking companies within the Top Companies dataset, when partitioned by industry, and ordered by revenue.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfRANKREVENUE))
 ```
+*************
 
+This dataframe is another ranking SQL crosstab, this time for the housing dataset. Here, we display the ranking of population density by state.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfRANKPOPDENSITY))
 ```
-
+************
+## Visualizations in R
+***************
+## Tableau Visualizations
 ![](./EmploymentPayState.png) 
 
 ![](./CityGrowthNth.png) 
@@ -92,3 +95,4 @@ data.frame(head(dfRANKPOPDENSITY))
 ![](./IndustryStateEarnings.png) 
 
 ![](./PopulationvsArea.jpg) 
+
