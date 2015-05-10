@@ -86,13 +86,18 @@ data.frame(head(dfRANKPOPDENSITY))
 ## Visualizations in R
 ***************
 ## Tableau Visualizations
-![](./EmploymentPayState.png) 
+![](./EmploymentPayState.png)
+Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state totals tables on state.   
 
-![](./CityGrowthNth.png) 
+![](./IndustryStateEarnings.png)
+Color shows the state that performs best in a given industries. The text shows a given industries percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
 
-![](./LandWaterHousing.png) 
+![](./LandWaterHousing.png)
+A dual axis is used to show population density on top of a double bar chart displaying land and water proportions by state. The database used is a join of the state housing and state totals tables on state. 
 
-![](./IndustryStateEarnings.png) 
+![](./PopulationvsArea.jpg)
+The color shows the total area of a state and the size shows the population of a given state.
 
-![](./PopulationvsArea.jpg) 
+![](./CityGrowthNth.png)
+The nth parameter is used to show nth growth by city from unique company ids. The color range reflects the lowest to highest growth over all company ids. The top companies table is used.  
 
