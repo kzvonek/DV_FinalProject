@@ -7,21 +7,31 @@ output: html_document
 Created by: Natasha Halfin, Evan Johnston, and Kaylyn Zvonek 
 
 ```{r, echo=TRUE}
-library("ggplot2")
-library("gplots")
 library("bitops")
-library("knitr")
-library("jsonlite")
+library("datasets")
+library("dplyr")
+library("ggplot2")
 library("ggthemes")
+library("gplots")
+library("graphics")
+library("grDevices")
+library("grid")
+library("jsonlite")
+library("knitr")
+library("lubridate")
+library("methods")
 library("RCurl")
 library("reshape2")
+library("rmarkdown")
+library("rstudio")
+library("scales")
+library("stats")
 library("tidyr")
-library("dplyr")
-library("grid")
+library("utils")
 
 source("../01 Data/Data.R")
 source("../02 Data Wrangling/DataWrangling.R")
-#source("../03 Visualizations/Visualizations.R")
+source("../03 Visualizations/Visualizations.R")
 ```
 
 
@@ -48,7 +58,7 @@ data.frame(head(dfSTATEHOUSING))
 
 ## Data Wranglings
 
-The dataframe below displays a left join between the state employment data and the state housing data joined on state. There are also mutated columns added that represent calculated values based on existing columns, such as Average Employment (AVG_EMP).
+The dataframe below displays a left join between the state employment data and the state housing data based on the key of state. There have also been mutated columns added that represent calculated values based on existing columns, such as Average Employment (AVG_EMP).
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfSTATEHOUSINGTOTALS))
 ```
@@ -59,13 +69,13 @@ data.frame(head(dfTopCompanies2))
 ```
 **************
 
-This dataframe contains the same combination of Top Companies data as the one above,except it is filtered to only show results for Texas companies and industries.
+This dataframe the same combination of Top Companies data as the one above,except it is filtered to only show results for Texas companies and industries.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTopCompanies3))
 ```
 **************
 
-This dataframe is a left join between a dataframe of the Top Companies data, grouped by state, with dfSTATEHOUSINGTOTALS from above. This displays a wide range of industry, employment, and housing data for each state. Included are calculated columns displaying employment rate, ratio of water to total area, ratio of land to total area, average employees per establishment, average pay (in thousands of dollars), and average growth and revenue.
+This dataframe is a left join between a dataframe of the Top Companies data, grouped by state, with dfSTATEHOUSINGTOTALS from above. This displays a wide range of industry, employment, and housing data for each state.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTOTALS))
 
@@ -84,13 +94,34 @@ data.frame(head(dfRANKPOPDENSITY))
 ```
 ************
 ## Visualizations in R
-***************
+
+Similar to above, these wrangled dataframes allow for interesting visualizations from the data on companies, housing, and state demographics.
+
+****************
+This first visualization shows population by state, where population includes all persons in society. Additionally, it shows the number of housing units, colored by intensity, per state, and land area (*100 for scalar mapping appropriateness) as shown by the squares.
+This graph demonstrates the non-linear relationship between population, housing, and geographical space.
+![](./Viz1.png)
+
+****************
+
+The second visualization attempts to show a relationship between Employment rate and Average Annual pay. Such a relationship should intuitively exist, and be positively correlated. The data do show a positively correlated regression, but much variance can be seen by the spread of the dots.
+Additionally, this plot shows the number of establishments and population to give the viewer alternate considerations of possible confounding variables.
+![](./Viz2.png)
+
+****************
+
+This third visualization converts employment rate, average employment per state, average annual income, and average growth to normalized distributions so they can be simultaneously compared. It is clear that these metrics are mostly normal, all having a mean within 1 standard deviation of each other.
+Additionally, it can be seen that the average annual pay (in nominal terms) is below the mean farther than other metrics (pay, employment, and growth) which is consistent with current literature suggesting that nominal wages have not caught up to economic growth. Similarly, this could be related to why we have seen increased employment in recent years, yet poverty rates are still higher than normal.
+![](./Viz3.png)
+
+****************
+
 ## Tableau Visualizations
 ![](./EmploymentPayState.png)
-Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state employment tables on state.   
+Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state totals tables on state.   
 
 ![](./IndustryStateEarnings.png)
-Color shows the state that performs best in given industries. The text shows a given industry's percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
+Color shows the state that performs best in a given industries. The text shows a given industries percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
 
 ![](./LandWaterHousing.png)
 A dual axis is used to show population density on top of a double bar chart displaying land and water proportions by state. The database used is a join of the state housing and state totals tables on state. 
