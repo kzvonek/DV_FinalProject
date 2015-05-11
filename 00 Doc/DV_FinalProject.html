@@ -93,8 +93,9 @@ library(&quot;jsonlite&quot;)</code></pre>
 ## 
 ##     View</code></pre>
 <pre class="r"><code>library(&quot;knitr&quot;)
-library(&quot;lubridate&quot;)
-library(&quot;methods&quot;)
+library(&quot;lubridate&quot;)</code></pre>
+<pre><code>## Warning: package 'lubridate' was built under R version 3.1.3</code></pre>
+<pre class="r"><code>library(&quot;methods&quot;)
 library(&quot;RCurl&quot;)
 library(&quot;reshape2&quot;)
 library(&quot;rmarkdown&quot;)
@@ -109,6 +110,7 @@ source(&quot;../02 Data Wrangling/DataWrangling.R&quot;)
 source(&quot;../03 Visualizations/Visualizations.R&quot;)</code></pre>
 <pre><code>## No id variables; using all as measure variables</code></pre>
 <p>For our project, we chose to work with three datasets. One contains data on the top 5000 companies in the U.S., the second contains state employment data, and the third data set describes housing data by state. Our goal was to cover as much material as possible covered in class, including data blending, data joins, beautiful plotting, data wrangling, SQL crosstabs, and advanced table calculations.</p>
+<p>The top companies data is from Inc.com, and the state housing and employment data is from census.gov. All data is for the year 2012. The Oracle tables can be found under Natasha Halfin (UTEID nh5797).</p>
 <p>Below is a snapshot of the dataframes for each dataset prior to any data manipulation.</p>
 <p>Top Companies Data</p>
 <pre class="r"><code>data.frame(head(dfTOPCOMPANIES))</code></pre>

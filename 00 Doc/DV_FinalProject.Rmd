@@ -37,6 +37,8 @@ source("../03 Visualizations/Visualizations.R")
 
 For our project, we chose to work with three datasets. One contains data on the top 5000 companies in the U.S., the second contains state employment data, and the third data set describes housing data by state. Our goal was to cover as much material as possible covered in class, including data blending, data joins, beautiful plotting, data wrangling, SQL crosstabs, and advanced table calculations.
 
+The top companies data is from Inc.com, and the state housing and employment data is from census.gov. All data is for the year 2012. The Oracle tables can be found under Natasha Halfin (UTEID nh5797).
+
 Below is a snapshot of the dataframes for each dataset prior to any data manipulation.
 
 Top Companies Data
