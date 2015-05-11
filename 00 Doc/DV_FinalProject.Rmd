@@ -95,7 +95,7 @@ data.frame(head(dfRANKPOPDENSITY))
 ************
 ## Visualizations in R
 
-Similar to above, these wrangled dataframes allow for interesting visualizations from the data on companies, housing, and state demographics.
+The wrangled dataframes from above and others allow for interesting visualizations from the data on companies, housing, and state demographics.
 
 ****************
 This first visualization shows population by state, where population includes all persons in society. Additionally, it shows the number of housing units, colored by intensity, per state, and land area (*100 for scalar mapping appropriateness) as shown by the squares.
@@ -117,18 +117,23 @@ Additionally, it can be seen that the average annual pay (in nominal terms) is b
 ****************
 
 ## Tableau Visualizations
-![](./EmploymentPayState.png)
 Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state totals tables on state.   
+![](./EmploymentPayState.png)
 
+***************
+Color shows the state that performs best in a given industries. The text shows a given industries percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table.
 ![](./IndustryStateEarnings.png)
-Color shows the state that performs best in a given industries. The text shows a given industries percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
 
+******************
+A dual axis is used to show population density on top of a double bar chart displaying land and water proportions by state. The database used is a join of the state housing and state totals tables on state.
 ![](./LandWaterHousing.png)
-A dual axis is used to show population density on top of a double bar chart displaying land and water proportions by state. The database used is a join of the state housing and state totals tables on state. 
 
-![](./PopulationvsArea.jpg)
+ ***********************
 The color shows the total area of a state and the size shows the population of a given state.
+![](./PopulationvsArea.jpg)
 
-![](./CityGrowthNth.png)
+***************************
 The nth parameter is used to show nth growth by city from unique company ids. The color range reflects the lowest to highest growth over all company ids. The top companies table is used.  
+![](./CityGrowthNth.png)
+
 
