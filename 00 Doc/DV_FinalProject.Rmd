@@ -48,7 +48,7 @@ data.frame(head(dfSTATEHOUSING))
 
 ## Data Wranglings
 
-The dataframe below displays a left join between the state employment data and the state housing data based on the key of state. There have also been mutated columns added that represent calculated values based on existing columns, such as Average Employment (AVG_EMP).
+The dataframe below displays a left join between the state employment data and the state housing data joined on state. There are also mutated columns added that represent calculated values based on existing columns, such as Average Employment (AVG_EMP).
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfSTATEHOUSINGTOTALS))
 ```
@@ -59,13 +59,13 @@ data.frame(head(dfTopCompanies2))
 ```
 **************
 
-This dataframe the same combination of Top Companies data as the one above,except it is filtered to only show results for Texas companies and industries.
+This dataframe contains the same combination of Top Companies data as the one above,except it is filtered to only show results for Texas companies and industries.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTopCompanies3))
 ```
 **************
 
-This dataframe is a left join between a dataframe of the Top Companies data, grouped by state, with dfSTATEHOUSINGTOTALS from above. This displays a wide range of industry, employment, and housing data for each state.
+This dataframe is a left join between a dataframe of the Top Companies data, grouped by state, with dfSTATEHOUSINGTOTALS from above. This displays a wide range of industry, employment, and housing data for each state. Included are calculated columns displaying employment rate, ratio of water to total area, ratio of land to total area, average employees per establishment, average pay (in thousands of dollars), and average growth and revenue.
 ```{r, eval=TRUE, echo=TRUE}
 data.frame(head(dfTOTALS))
 
@@ -87,10 +87,10 @@ data.frame(head(dfRANKPOPDENSITY))
 ***************
 ## Tableau Visualizations
 ![](./EmploymentPayState.png)
-Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state totals tables on state.   
+Employment rate is a calculated field that finds the average employment rate by state by dividing number of employed people by the population. Pay rate is a calculated field that displays the average annual pay by state. It is found by dividing the total payroll for an entire state by the state's number of employees. Size displays the pay rate and color displays the employment rate. The database used is a join of the state housing and state employment tables on state.   
 
 ![](./IndustryStateEarnings.png)
-Color shows the state that performs best in a given industries. The text shows a given industries percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
+Color shows the state that performs best in given industries. The text shows a given industry's percentile contribution to a state with all the industries in one state adding up to 100%. The data used is from the top companies table. 
 
 ![](./LandWaterHousing.png)
 A dual axis is used to show population density on top of a double bar chart displaying land and water proportions by state. The database used is a join of the state housing and state totals tables on state. 
